@@ -1,13 +1,12 @@
 name = "cloudflare_temp_email"
-# 关键修改：指向 worker 文件夹下的入口
+# 必须加上目录前缀，因为 GitHub Actions 在根目录运行
 main = "worker/index.js" 
 compatibility_date = "2024-04-03"
 
-# 必须绑定 KV
 [[kv_namespaces]]
 binding = "KV"
-id = "875f916a4b7c4623940057763002e393" # 确保这里填了你在 Cloudflare 创建的 KV ID
+id = "875f916a4b7c4623940057763002e393KV_ID"
 
 [vars]
-# 填入你准备收邮件的域名
+# 这里的域名要换成你自己的
 DOMAIN = "mail.yourdomain.com"
