@@ -3,7 +3,7 @@ name: Deploy-Worker
 on:
   push:
     branches:
-      - main  # 确保这对应你的主分支名称
+      - main 
 
 jobs:
   deploy:
@@ -12,19 +12,12 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install Dependencies
-        run: npm install
-
       - name: Deploy to Cloudflare
         uses: cloudflare/wrangler-action@v3
         with:
-          # 注意这里：方案 A 使用的是 apiKey 和 email 的组合
+          # 使用你配置好的方案 A 变量
           apiKey: ${{ secrets.CLOUDFLARE_API_KEY }}
           email: ${{ secrets.CLOUDFLARE_EMAIL }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # 核心修改：直接运行部署，wrangler 会自动处理 worker 文件夹
           command: deploy
