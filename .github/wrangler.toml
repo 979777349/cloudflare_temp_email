@@ -1,0 +1,10 @@
+name = "cloudflare_temp_email"
+main = "src/index.js" # ！！！请务必检查你的 src 文件夹里是 index.js 还是 index.ts
+compatibility_date = "2024-04-03"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "你的_KV_ID" # 见下一步如何获取这个 ID
+
+[vars]
+DOMAIN = "你的域名.com" # 换成你准备用来收邮件的域名
