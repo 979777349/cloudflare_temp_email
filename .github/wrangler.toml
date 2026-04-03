@@ -4,7 +4,7 @@ compatibility_date = "2024-04-03"
 
 [[kv_namespaces]]
 binding = "KV"
-id = "你的_KV_ID" # 见下一步如何获取这个 ID
+id = "875f916a4b7c4623940057763002e393" # 见下一步如何获取这个 ID
 
 [vars]
 DOMAIN = "你的域名.com" # 换成你准备用来收邮件的域名
